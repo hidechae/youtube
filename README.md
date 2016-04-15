@@ -1,6 +1,6 @@
-# Youtube
+# EasyYoutubeAccessor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/youtube`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/easy_youtube_accessor`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'youtube'
+gem 'easy_youtube_accessor'
 ```
 
 And then execute:
@@ -18,15 +18,15 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install youtube
+    $ gem install easy_youtube_accessor
 
 ## Getting Started
 
 Require and set your API key for your google app.
 
 ```ruby
-require 'youtube'
-Youtube.api_key = YOUR_API_KEY
+require 'easy_youtube_accessor'
+EasyYoutubeAccessor.api_key = YOUR_API_KEY
 ```
 
 ## Usage
@@ -34,8 +34,8 @@ Youtube.api_key = YOUR_API_KEY
 Get video like
 
 ```ruby
-Youtube::Video.find_by_id('qnZZInDyrZo')
-=> [#<Youtube::Video:0x007f95427d6138
+EasyYoutubeAccessor::Video.find_by_id('qnZZInDyrZo')
+=> [#<EasyYoutubeAccessor::Video:0x007f95427d6138
   @category_id=28,
   @channel_id="UCK8sQmJBp8GCxrOtXWBpyEA",
   @comment_count=907,
@@ -61,8 +61,8 @@ Youtube::Video.find_by_id('qnZZInDyrZo')
 Get channel like
 
 ```ruby
-Youtube::Channel.find_by_id('UCK8sQmJBp8GCxrOtXWBpyEA')
-=> [#<Youtube::Channel:0x007f95463b2e18
+EasyYoutubeAccessor::Channel.find_by_id('UCK8sQmJBp8GCxrOtXWBpyEA')
+=> [#<EasyYoutubeAccessor::Channel:0x007f95463b2e18
   @channel_id="UCK8sQmJBp8GCxrOtXWBpyEA",
   @comment_count=24,
   @description=
@@ -82,8 +82,8 @@ Youtube::Channel.find_by_id('UCK8sQmJBp8GCxrOtXWBpyEA')
 Get video list for specified channel lik
 
 ```ruby
-Youtube::Video.find_by_channel_id('UCK8sQmJBp8GCxrOtXWBpyEA', limit: 2)
-=> [#<Youtube::Video:0x007f9545d600b0
+EasyYoutubeAccessor::Video.find_by_channel_id('UCK8sQmJBp8GCxrOtXWBpyEA', limit: 2)
+=> [#<EasyYoutubeAccessor::Video:0x007f9545d600b0
   @category_id=28,
   @channel_id="UCK8sQmJBp8GCxrOtXWBpyEA",
   @comment_count=907,
@@ -104,7 +104,7 @@ Youtube::Video.find_by_channel_id('UCK8sQmJBp8GCxrOtXWBpyEA', limit: 2)
   @title="Goals in Google Calendar",
   @video_id="qnZZInDyrZo",
   @view_count=261059>,
- #<Youtube::Video:0x007f9545d531a8
+ #<EasyYoutubeAccessor::Video:0x007f9545d531a8
   @category_id=28,
   @channel_id="UCK8sQmJBp8GCxrOtXWBpyEA",
   @comment_count=125,

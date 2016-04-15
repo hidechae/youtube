@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Youtube do
+describe EasyYoutubeAccessor do
   it 'has a version number' do
-    expect(Youtube::VERSION).not_to be nil
+    expect(EasyYoutubeAccessor::VERSION).not_to be nil
   end
 
   it 'does something useful' do

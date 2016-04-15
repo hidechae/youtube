@@ -1,9 +1,9 @@
-require "youtube/version"
-require 'youtube/video'
-require 'youtube/channel'
+require "easy_youtube_accessor/version"
+require 'easy_youtube_accessor/video'
+require 'easy_youtube_accessor/channel'
 require 'google/apis/youtube_v3'
 
-module Youtube
+module EasyYoutubeAccessor
 
   def self.api_key=(api_key)
     @api_key = api_key

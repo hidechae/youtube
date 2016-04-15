@@ -1,4 +1,4 @@
-module Youtube
+module EasyYoutubeAccessor
   class Channel
 
     attr_accessor(
@@ -39,7 +39,7 @@ module Youtube
     end
 
     def self.find_by_id(id)
-      Youtube.client.list_channels('id,snippet,statistics,contentDetails', id: Array(id).join(?,)).items.map do |item|
+      EasyYoutubeAccessor.client.list_channels('id,snippet,statistics,contentDetails', id: Array(id).join(?,)).items.map do |item|
         self.new(
           channel_id:          item.id,
           google_plus_user_id: item.content_details.google_plus_user_id,
@@ -56,11 +56,11 @@ module Youtube
     end
 
     def videos(order: :date, limit: 30)
-      Youtube::Video.find_by_channel_id(self.channel_id, order: order, limit: limit)
+      EasyYoutubeAccessor::Video.find_by_channel_id(self.channel_id, order: order, limit: limit)
     end
 
     def videos_with_pager(order: :date, page_token: nil, max_results: 30)
-      Youtube::Video.find_by_channel_id_with_pager(
+      EasyYoutubeAccessor::Video.find_by_channel_id_with_pager(
         self.channel_id,
         order: order,
         page_token: page_token,

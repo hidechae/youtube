@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'youtube/version'
+require 'easy_youtube_accessor/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "youtube"
-  spec.version       = Youtube::VERSION
+  spec.name          = "easy_youtube_accessor"
+  spec.version       = EasyYoutubeAccessor::VERSION
   spec.authors       = ["Hideyuki Utsunomiya"]
   spec.email         = ["hidechae@gmail.com"]
 

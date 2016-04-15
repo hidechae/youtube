@@ -1,4 +1,4 @@
-module Youtube
+module EasyYoutubeAccessor
   class Video
 
     MAX_RESULTS = 50
@@ -53,11 +53,11 @@ module Youtube
     end
 
     def channel
-      Youtube::Channel.find_by_id(self.channel_id).first
+      EasyYoutubeAccessor::Channel.find_by_id(self.channel_id).first
     end
 
     def self.find_by_id(id)
-      Youtube.client.list_videos('id,snippet,statistics,player', id: Array(id).join(?,)).items.map do |item|
+      EasyYoutubeAccessor.client.list_videos('id,snippet,statistics,player', id: Array(id).join(?,)).items.map do |item|
         self.new(
           video_id:       item.id,
           channel_id:     item.snippet.channel_id,
@@ -78,7 +78,7 @@ module Youtube
     end
 
     def self.find_by_channel_id_with_pager(channel_id, order: :date, page_token: nil, max_results: 30)
-      r = Youtube.client.list_searches(
+      r = EasyYoutubeAccessor.client.list_searches(
         'id',
         type: :video,
         channel_id: channel_id,
@@ -95,7 +95,7 @@ module Youtube
 
     def self.find_by_channel_id(channel_id, order: :date, limit: 30)
       find_with_pagenation(limit) do |page_token|
-        r = Youtube.client
+        r = EasyYoutubeAccessor.client
           .list_searches(
             'id',
             type: :video,
